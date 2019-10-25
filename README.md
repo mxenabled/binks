@@ -23,3 +23,4 @@ binks release -f
 ## Dependencies
 
 * [Thor](http://whatisthor.com/)
+* [Maven](https://maven.apache.org/)
