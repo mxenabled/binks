@@ -1,0 +1,46 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+$LOAD_PATH << "lib"
+$LOAD_PATH << "lib/binks"
+
+require "binks"
+require "thor"
+
+puts "You'sa in big doodoo, dis time!"
+
+class Cli < Thor
+  class_option :verbose, :type => :boolean
+
+  desc "release [options]", "Release current version"
+  long_desc <<-LONGDESC
+    `binks release` Parses version from pom.xml, validates the version
+    and tags
+
+    You can optionally specify a second parameter, which will print
+    out a from message as well.
+
+    Version rules:
+    \x5* Format: ###.###.###[.pre] (each segment must be 1 to 3 digits)
+    \x5* .pre versions only allowed on a branch
+    \x5* Cannot reuse the same tag (unless using the --force flag)
+  LONGDESC
+  option :force,   :type => :boolean
+  option :check,   :type => :boolean
+  def release
+    ::Binks::CommandRunner.init(options)
+
+    jar = ::Binks::Jar.new(options)
+    jar.validate!
+    jar.publish!
+  end
+
+  desc "list", "Show all versions"
+  def list
+    ::Binks::CommandRunner.init(options)
+
+    ::Binks::VersionParser.from_tags(::Binks::GitCli.new.all_tags).each { |t| puts t }
+  end
+end
+
+::Cli.start(ARGV)
