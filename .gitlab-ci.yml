@@ -18,6 +18,3 @@ stages:
 
 ruby:2.5:
   <<: *test-specific-version
-
-jruby:9.2.5.0:
-  <<: *test-specific-version
