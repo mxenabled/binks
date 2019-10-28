@@ -37,6 +37,18 @@ describe ::Binks::GitCli do
     end
   end
 
+  describe "#dirty?" do
+    it "when clean" do
+      expect(cmd).to receive(:run!).with("git diff --stat").and_return("junk is here!")
+      expect(subject.dirty?).to eq(true)
+    end
+
+    it "when dirty" do
+      expect(cmd).to receive(:run!).with("git diff --stat").and_return("")
+      expect(subject.dirty?).to eq(false)
+    end
+  end
+
   describe "#push_tags" do
     it "invokes command" do
       expect(cmd).to receive(:run!).with("git push --tags")

@@ -30,6 +30,7 @@ task :release do
   begin
     jar.validate!
   rescue ::Binks::BinksError => e
+    puts "You'sa in big doodoo, dis time!"
     puts "ERROR: #{e.message}"
     puts ""
     puts opt_parser
