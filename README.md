@@ -1,4 +1,4 @@
-[![coverage report](https://gitlab.mx.com/mx/binks/badges/master/coverage.svg)](https://gitlab.mx.com/mx/binks/commits/master)
+[![pipeline status](https://gitlab.mx.com/mx/binks/badges/master/pipeline.svg)](https://gitlab.mx.com/mx/binks/commits/master) [![coverage report](https://gitlab.mx.com/mx/binks/badges/master/coverage.svg)](https://gitlab.mx.com/mx/binks/commits/master)
 
 # Binks
 
