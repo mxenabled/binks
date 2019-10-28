@@ -16,7 +16,7 @@ module Binks
     end
 
     def push_tags(force)
-      run!("git push --tags origin #{version}#{force ? ' -f' : ''}")
+      run!("git push --tags#{force ? ' -f' : ''}")
     end
 
   private

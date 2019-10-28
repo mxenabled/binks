@@ -17,12 +17,14 @@ Binks can be used in two ways -- as a standalone binary or rake task add-in
 Add the following to Gemfile:
 
 ```ruby
-gem "binks"
+source "https://gems.internal.mx" do
+  gem "binks"
+end
 ```
 
 Add the following to Rakefile
 
-```
+```ruby
 require "binks/rake_task"
 ```
 
@@ -31,12 +33,12 @@ require "binks/rake_task"
 #### As a rake task
 
 Regular release (from master)
-```
+```shell
 rake release
 ```
 
 Force retag
-```
+```shell
 rake release -- -f
 ```
 

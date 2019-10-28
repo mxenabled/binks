@@ -33,15 +33,11 @@ module Binks
     end
 
     def valid?
-      VERSION =~ version
+      !!(VERSION =~ version)
     end
 
     def to_s
       version
-    end
-
-    def ==(other)
-      other.class == self.class && other.to_s == self.to_s
     end
   end
 end
