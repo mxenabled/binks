@@ -1,0 +1,23 @@
+cache:
+  paths:
+    - vendor
+
+stages:
+  - test
+
+.test-specific-version: &test-specific-version
+  image: "${CI_BUILD_NAME}"
+  stage: test
+  before_script:
+    - apt-get update -qq
+    - gem install bundler --no-doc
+    - bundle install --jobs=2 --retry=3
+  script:
+    - bundle exec rubocop
+    - bundle exec rake spec
+
+ruby:2.5:
+  <<: *test-specific-version
+
+jruby:9.2.5.0:
+  <<: *test-specific-version
