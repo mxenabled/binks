@@ -1,3 +1,5 @@
+[![coverage report](https://gitlab.mx.com/mx/binks/badges/master/coverage.svg)](https://gitlab.mx.com/mx/binks/commits/master)
+
 # Binks
 
 Ruby command line utilty for managing jar (currently only supports maven) deployments via Gitlab pipelines.
