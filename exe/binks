@@ -7,10 +7,8 @@ $LOAD_PATH << "lib/binks"
 require "binks"
 require "thor"
 
-puts "You'sa in big doodoo, dis time!"
-
 class Cli < Thor
-  class_option :verbose, :type => :boolean
+  class_option :verbose, :type => :boolean, :aliases => :v
 
   desc "release [options]", "Release current version"
   long_desc <<-LONGDESC
@@ -25,14 +23,19 @@ class Cli < Thor
     \x5* .pre versions only allowed on a branch
     \x5* Cannot reuse the same tag (unless using the --force flag)
   LONGDESC
-  option :force,   :type => :boolean
-  option :check,   :type => :boolean
+  option :force, :type => :boolean, :aliases => :f
+  option :check, :type => :boolean, :aliases => :c
   def release
     ::Binks::CommandRunner.init(options)
 
     jar = ::Binks::Jar.new(options)
-    jar.validate!
-    jar.publish!
+    begin
+      jar.validate!
+      jar.publish!
+    rescue ::Binks::BinksError => e
+      puts "You'sa in big doodoo, dis time!"
+      puts "Error: #{e.message}"
+    end
   end
 
   desc "list", "Show all versions"

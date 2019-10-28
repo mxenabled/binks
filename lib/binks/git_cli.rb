@@ -15,6 +15,10 @@ module Binks
       run!("git rev-parse --abbrev-ref HEAD").strip
     end
 
+    def dirty?
+      !(run!("git diff --stat").strip.empty?)
+    end
+
     def push_tags(force)
       run!("git push --tags#{force ? ' -f' : ''}")
     end

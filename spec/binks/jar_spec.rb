@@ -4,6 +4,7 @@ describe ::Binks::Jar do
   let(:version) { "0.0.1" }
   let(:branch) { "master" }
   let(:all_tags) { [] }
+  let(:dirty) { false }
   let(:pom) { double(:pom, :version => ::Binks::VersionParser.new(version)) }
   let(:git) { double(:git) }
 
@@ -16,6 +17,7 @@ describe ::Binks::Jar do
 
     allow(git).to receive(:current_branch).and_return(branch)
     allow(git).to receive(:all_tags).and_return(all_tags)
+    allow(git).to receive(:dirty?).and_return(dirty)
   end
 
   describe "#branch" do
@@ -38,6 +40,16 @@ describe ::Binks::Jar do
   end
 
   describe "validate!" do
+    context "with dirty tree" do
+      let(:dirty) { true }
+
+      it "is invalid" do
+        expect do
+          subject.validate!
+        end.to raise_error(::Binks::BinksError, "Dirty tree. Commit your changes")
+      end
+    end
+
     context "non pre version" do
       let(:version) { "0.0.1" }
 
