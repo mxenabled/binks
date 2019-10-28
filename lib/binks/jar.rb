@@ -14,12 +14,13 @@ module Binks
 
     def publish!
       git.apply_tag(version, force)
+      git.push_tags(force)
     end
 
     def validate!
       raise ::Binks::BinksError, "Invalid version \"#{version}\"" unless version.valid?
-      raise ::Binks::BinksError, "Pre release versions must be released from a branch (not master)" if branch == "master" && version.pre?
-      raise ::Binks::BinksError, "Version already used" if !force && versions.include?(version)
+      raise ::Binks::BinksError, "Pre release versions must be released from a topic branch (not master)" if branch == "master" && version.pre?
+      raise ::Binks::BinksError, "Version already used" if !force && versions.any? { |v| v.to_s == version.to_s }
     end
 
     def version
