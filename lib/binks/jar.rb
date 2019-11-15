@@ -25,7 +25,7 @@ module Binks
     end
 
     def version
-      @version ||= pom.version
+      @version ||= build_file.version
     end
 
     def versions
@@ -38,8 +38,12 @@ module Binks
       @git ||= ::Binks::GitCli.new
     end
 
-    def pom
-      @pom ||= ::Binks::Pom.new("pom.xml")
+    def build_file
+      @build_file ||= if ::File.exist?("pom.xml")
+                        ::Binks::Pom.new("pom.xml")
+                      elsif ::File.exist?("build.gradle")
+                        ::Binks::Gradle.new("build.gradle")
+                      end
     end
   end
 end
