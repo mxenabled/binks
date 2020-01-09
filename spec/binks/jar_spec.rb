@@ -5,7 +5,7 @@ describe ::Binks::Jar do
   let(:branch) { "master" }
   let(:all_tags) { [] }
   let(:dirty) { false }
-  let(:pom) { double(:pom, :version => ::Binks::VersionParser.new(version)) }
+  let(:build) { double(:build, :version => ::Binks::VersionParser.new(version)) }
   let(:git) { double(:git) }
 
   let(:options) { {} }
@@ -13,7 +13,7 @@ describe ::Binks::Jar do
 
   before do
     allow(::Binks::GitCli).to receive(:new).and_return(git)
-    allow(::Binks::Pom).to receive(:new).and_return(pom)
+    allow(::Binks::Gradle).to receive(:new).and_return(build)
 
     allow(git).to receive(:current_branch).and_return(branch)
     allow(git).to receive(:all_tags).and_return(all_tags)
@@ -93,7 +93,7 @@ describe ::Binks::Jar do
   describe "#version" do
     let(:version) { "0.0.2" }
 
-    it "gives version from pom" do
+    it "gives version from build" do
       expect(subject.version.to_s).to eq(version)
     end
   end
