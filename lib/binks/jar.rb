@@ -39,11 +39,7 @@ module Binks
     end
 
     def build_file
-      @build_file ||= if ::File.exist?("pom.xml")
-                        ::Binks::Pom.new("pom.xml")
-                      elsif ::File.exist?("build.gradle")
-                        ::Binks::Gradle.new("build.gradle")
-                      end
+      @build_file ||= ::Binks::Gradle.new("build.gradle")
     end
   end
 end

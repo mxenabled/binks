@@ -31,7 +31,7 @@ require "binks/version"
   spec.executables   = ["binks"]
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "nokogiri", ">= 1.10.4"
+  # spec.add_dependency "nokogiri", ">= 1.10.4"
   spec.add_dependency "thor",     ">= 0.20.3"
 
   spec.add_development_dependency "bundler", ">= 1.16.0"
