@@ -21,6 +21,14 @@ describe ::Binks::Gradle do
     end
   end
 
+  context "with invalid version" do
+    let(:build_file) { "spec/resources/build_invalid.gradle" }
+
+    it "loads version of with correct value" do
+      expect { subject.version }.to raise_error ::Binks::BinksError, "No valid version detected in spec/resources/build_invalid.gradle"
+    end
+  end
+
   it "loads version of type VersionParser" do
     expect(subject.version.class).to eq(::Binks::VersionParser)
   end

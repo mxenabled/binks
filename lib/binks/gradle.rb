@@ -12,6 +12,7 @@ module Binks
     def version
       @version ||= begin
         match = @text.match(GRADLE_VERSION)
+        raise ::Binks::BinksError, "No valid version detected in #{@filename}" if match.nil?
         ::Binks::VersionParser.new(match[:version])
       end
     end
