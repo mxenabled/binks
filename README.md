@@ -61,9 +61,6 @@ binks release -f
 See [process wiki page](https://gitlab.mx.com/mx/io/wikis/Gems) for details on updating a gem.
 
 1. Create your feature branch (`git checkout -b my-new-feature`)
-2. If changing a `.proto` file
-  1. `brew install protobuf` _(unless you already have it)_
-  2. `rake compile`
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request

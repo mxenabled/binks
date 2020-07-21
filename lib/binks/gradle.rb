@@ -1,6 +1,6 @@
 module Binks
   class Gradle
-    GRADLE_VERSION = %r{version[\s]*\=[\s]*'(?<version>[\.\d]+(|\.pre))'}
+    GRADLE_VERSION = %r{version[\s]*\=[\s]*['"](?<version>[\.\d]+(|\.pre))['"]}
 
     attr_reader :filename
 
@@ -12,6 +12,7 @@ module Binks
     def version
       @version ||= begin
         match = @text.match(GRADLE_VERSION)
+        raise ::Binks::BinksError, "No valid version detected in #{@filename}" if match.nil?
         ::Binks::VersionParser.new(match[:version])
       end
     end
