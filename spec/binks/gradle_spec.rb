@@ -21,6 +21,14 @@ describe ::Binks::Gradle do
     end
   end
 
+  context "with double-quotes, no equals" do
+    let(:build_file) { "spec/resources/build_double_quote_no_equals.gradle" }
+
+    it "loads version of with correct value" do
+      expect("#{subject.version}").to eq("0.0.3")
+    end
+  end
+
   context "with invalid version" do
     let(:build_file) { "spec/resources/build_invalid.gradle" }
 
