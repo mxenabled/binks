@@ -1,4 +1,8 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
+plugins {
+  id 'com.mx.coppuccino' version '9.9.9'
+}
+
 version = '0.0.1'

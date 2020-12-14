@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    binks (0.0.6)
+    binks (0.0.7)
       thor (>= 0.20.3)
 
 GEM
