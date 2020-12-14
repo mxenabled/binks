@@ -5,7 +5,7 @@ PATH
       thor (>= 0.20.3)
 
 GEM
-  remote: https://rubygems.org/
+  remote: https://artifactory.internal.mx/api/gems/read-only-mirror.rubygems.org/
   specs:
     ast (2.4.0)
     coderay (1.1.2)

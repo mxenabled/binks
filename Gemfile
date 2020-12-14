@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-source "https://rubygems.org"
+source "https://artifactory.internal.mx/api/gems/read-only-mirror.rubygems.org/"
 
 gemspec
