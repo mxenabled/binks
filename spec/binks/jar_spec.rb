@@ -68,7 +68,7 @@ describe ::Binks::Jar do
           it "is invalid" do
             expect do
               subject.validate!
-            end.to raise_error(::Binks::BinksError, "Version already used")
+            end.to raise_error(::Binks::BinksError, "Version (0.0.1) already used")
           end
         end
       end
