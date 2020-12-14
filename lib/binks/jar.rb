@@ -21,7 +21,7 @@ module Binks
       raise ::Binks::BinksError, "Invalid version \"#{version}\"" unless version.valid?
       raise ::Binks::BinksError, "Dirty tree. Commit your changes" if !force && git.dirty?
       raise ::Binks::BinksError, "Pre release versions must be released from a topic branch (not master)" if branch == "master" && version.pre?
-      raise ::Binks::BinksError, "Version already used" if !force && versions.any? { |v| v.to_s == version.to_s }
+      raise ::Binks::BinksError, "Version (#{version}) already used" if !force && versions.any? { |v| v.to_s == version.to_s }
     end
 
     def version
