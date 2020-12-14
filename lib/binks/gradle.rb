@@ -1,6 +1,6 @@
 module Binks
   class Gradle
-    GRADLE_VERSION = %r{version[\s]*\=*[\s]*['"](?<version>[\.\d]+(|\.pre))['"]}
+    GRADLE_VERSION = %r{^version[\s]*\=*[\s]*['"](?<version>[\.\d]+(|\.pre))['"]}
 
     attr_reader :filename
 
