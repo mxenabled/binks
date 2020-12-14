@@ -19,7 +19,7 @@ Binks can be used in two ways -- as a standalone binary or rake task add-in
 Add the following to Gemfile:
 
 ```ruby
-source "https://gems.internal.mx" do
+source "https://artifactory.internal.mx/api/gems/gems.internal.mx/" do
   gem "binks"
 end
 ```
@@ -75,6 +75,17 @@ After committing and pushing the version change, run:
 
 ```shell
 rake release
+```
+
+If prompted for an `Email` and `Password`, use your `username` and `api_key`
+(respectively) for artifactory:
+https://artifactory.internal.mx/ui/admin/artifactory/user_profile
+
+For example:
+
+```
+   Email:   bob.ross
+Password:   QctLW6hhgk+QSID3F4hG8tNwNIgDKYCWcL1ElVkJD74gW6iZFbYFnghzGlt4m3iV7TzOgmY3hW+GdsNnFxG2Jg
 ```
 
 to push the gem to `gems.internal.mx`
