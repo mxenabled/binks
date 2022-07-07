@@ -27,7 +27,7 @@ class BinksPluginTest extends Specification {
     when:
     def result = GradleRunner.create()
         .withProjectDir(testProjectFolder.root)
-        .withArguments("release")
+        .withArguments("release", "--check-only", "--ignore-dirty-tree", "--force")
         .withPluginClasspath()
         .build()
 

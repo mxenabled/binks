@@ -1,10 +1,14 @@
 plugins {
   id "com.github.mxenabled.coppuccino" version "2.0.0"
+  id "com.github.mxenabled.vogue" version "1.0.1"
+  id "com.github.mxenabled.hush" version "1.0.6"
+  // id "com.github.mxenabled.binks" version "0.0.1"
+  // id "com.mx.binks" version "0.0.1" // for local testing
   id "groovy"
   id "java"
   id "maven-publish"
   id "java-gradle-plugin"
-  id "org.jetbrains.kotlin.jvm" version "1.6.10"
+  id "org.jetbrains.kotlin.jvm" version "1.7.10"
 }
 
 group "com.mx.binks"
@@ -20,10 +24,7 @@ repositories {
 
 dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
-
-  // implementation "com.google.code.gson:gson:2.+"
-  // implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.13.3"
-  // implementation "com.github.ben-manes.versions:com.github.ben-manes.versions.gradle.plugin:0.42.0"
+  implementation "com.lordcodes.turtle:turtle:0.7.0" // Provides git and commandline interaction API
 
   constraints {
     implementation ("com.thoughtworks.xstream:xstream:1.4.19") { because "It resolves a bajillion CVEs" }
@@ -53,10 +54,7 @@ compileKotlin { kotlinOptions { jvmTarget = "1.8" } }
 
 compileTestKotlin { kotlinOptions { jvmTarget = "1.8" } }
 
-coppuccino {
-  kotlin { enabled = true }
-  coverage { minimumCoverage = 0.01 }
-}
+coppuccino { kotlin { enabled = true } }
 
 sourceSets {
   test { groovy { srcDirs "src/test/groovy" } }

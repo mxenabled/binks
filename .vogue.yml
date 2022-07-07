@@ -1,0 +1,10 @@
+packageRules:
+  -
+    package: "com.github.mxenabled.binks"
+    rules:
+      major:
+        requireLatest: false
+      minor:
+        requireLatest: false
+      patch:
+        requireLatest: false
