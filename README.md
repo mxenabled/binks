@@ -1,14 +1,10 @@
-[![pipeline status](https://gitlab.mx.com/mx/binks/badges/master/pipeline.svg)](https://gitlab.mx.com/mx/binks/commits/master) [![coverage report](https://gitlab.mx.com/mx/binks/badges/master/coverage.svg)](https://gitlab.mx.com/mx/binks/commits/master)
-
 # Binks
+
+Binks is a simple plugin that validates and creates release tags to launch jar project release pipelines. 
 
 ### Installation
 
-```groovy
-plugins {
- id "com.github.mxenabled.binks" version "[VERSION]"
-}
-```
+Binks is hosted via [JitPack](https://jitpack.io/p/mxenabled/binks).
 
 ### Usage
 
