@@ -1,3 +1,0 @@
-include:
-  - project: 'mx/ci-templates'
-    file: 'gitlab-ci/java-publish.template.yml'
