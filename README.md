@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/mxenabled/binks.svg)](https://jitpack.io/#mxenabled/binks)
+
 # Binks
 
 Binks is a simple plugin that validates and creates release tags to launch jar project release pipelines. 
