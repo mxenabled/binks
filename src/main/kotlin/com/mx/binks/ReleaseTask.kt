@@ -29,7 +29,6 @@ open class ReleaseTask : DefaultTask() {
     option = "force",
     description = "Force tag. Moves existing tag to current hash"
   )
-
   @get:Input
   var force: Boolean = false
 
@@ -72,9 +71,9 @@ open class ReleaseTask : DefaultTask() {
       }
       throw ReleaseError(
         "${
-        red("You'sa in big doodoo, dis time!")
+          red("You'sa in big doodoo, dis time!")
         }\n${
-        yellow("Version ($version) already in use. Change the version or use --force")
+          yellow("Version ($version) already in use. Change the version or use --force")
         }"
       )
     }
