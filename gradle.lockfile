@@ -1,10 +1,11 @@
 # This is a Gradle generated file for dependency locking.
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
+com.github.spotbugs:spotbugs-annotations:4.9.4=compileClasspath,compileOnlyDependenciesMetadata
 com.github.spotbugs:spotbugs-annotations:4.9.8=spotbugs
 com.github.spotbugs:spotbugs:4.9.8=spotbugs
 com.github.stephenc.jcip:jcip-annotations:1.0-1=spotbugs
-com.google.code.findbugs:jsr305:3.0.2=spotbugs
+com.google.code.findbugs:jsr305:3.0.2=compileClasspath,compileOnlyDependenciesMetadata,spotbugs
 com.google.code.gson:gson:2.13.2=spotbugs
 com.google.errorprone:error_prone_annotations:2.41.0=spotbugs
 com.lordcodes.turtle:turtle:0.7.0=compileClasspath,implementationDependenciesMetadata,runtimeClasspath,testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
@@ -39,8 +40,8 @@ io.gitlab.arturbosch.detekt:detekt-tooling:1.23.8=detekt
 io.gitlab.arturbosch.detekt:detekt-utils:1.23.8=detekt
 io.leangen.geantyref:geantyref:1.3.16=testRuntimeClasspath
 jaxen:jaxen:2.0.0=spotbugs
-net.bytebuddy:byte-buddy-agent:1.12.19=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
-net.bytebuddy:byte-buddy:1.12.19=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
+net.bytebuddy:byte-buddy-agent:1.14.1=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
+net.bytebuddy:byte-buddy:1.14.1=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
 net.sf.saxon:Saxon-HE:12.9=spotbugs
 org.apache.bcel:bcel:6.11.0=spotbugs
 org.apache.commons:commons-lang3:3.19.0=spotbugs
@@ -98,8 +99,8 @@ org.junit.platform:junit-platform-engine:1.8.2=testRuntimeOnlyDependenciesMetada
 org.junit:junit-bom:5.12.2=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
 org.junit:junit-bom:5.14.0=spotbugs
 org.junit:junit-bom:5.8.2=testRuntimeOnlyDependenciesMetadata
-org.mockito:mockito-core:4.11.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
-org.mockito:mockito-inline:4.11.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
+org.mockito:mockito-core:5.2.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
+org.mockito:mockito-inline:5.2.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
 org.objenesis:objenesis:3.3=testRuntimeClasspath
 org.opentest4j:opentest4j:1.2.0=testRuntimeOnlyDependenciesMetadata
 org.opentest4j:opentest4j:1.3.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
@@ -118,4 +119,4 @@ org.snakeyaml:snakeyaml-engine:2.7=detekt
 org.spockframework:spock-bom:2.4-M6-groovy-3.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
 org.spockframework:spock-core:2.4-M6-groovy-3.0=testCompileClasspath,testImplementationDependenciesMetadata,testRuntimeClasspath
 org.xmlresolver:xmlresolver:5.3.3=spotbugs
-empty=annotationProcessor,apiDependenciesMetadata,compileOnlyDependenciesMetadata,detektPlugins,intransitiveDependenciesMetadata,kotlinCompilerPluginClasspath,kotlinNativeCompilerPluginClasspath,kotlinScriptDef,kotlinScriptDefExtensions,runtimeOnlyDependenciesMetadata,spotbugsPlugins,testAnnotationProcessor,testApiDependenciesMetadata,testCompileOnlyDependenciesMetadata,testIntransitiveDependenciesMetadata,testKotlinScriptDef,testKotlinScriptDefExtensions
+empty=annotationProcessor,apiDependenciesMetadata,detektPlugins,intransitiveDependenciesMetadata,kotlinCompilerPluginClasspath,kotlinNativeCompilerPluginClasspath,kotlinScriptDef,kotlinScriptDefExtensions,runtimeOnlyDependenciesMetadata,spotbugsPlugins,testAnnotationProcessor,testApiDependenciesMetadata,testCompileOnlyDependenciesMetadata,testIntransitiveDependenciesMetadata,testKotlinScriptDef,testKotlinScriptDefExtensions
