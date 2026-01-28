@@ -11,7 +11,7 @@ plugins {
 }
 
 group "com.mx.binks"
-version "2.0.0"
+version "3.0.0"
 
 java {
   toolchain {
@@ -30,7 +30,6 @@ dependencies {
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
   implementation "com.lordcodes.turtle:turtle:0.7.0" // Provides git and commandline interaction API
 
-  // Unit tests
   testImplementation "org.mockito:mockito-core:5.21.0"
   testImplementation "org.spockframework:spock-core:2.4-M6-groovy-3.0"
 }
