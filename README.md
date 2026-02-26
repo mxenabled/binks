@@ -8,6 +8,34 @@ Binks is a simple plugin that validates and creates release tags to launch jar p
 
 Binks is hosted via [JitPack](https://jitpack.io/p/mxenabled/binks).
 
+#### Gradle
+
+<!-- x-release-please-start-version -->
+_build.gradle_:
+```groovy
+plugins {
+  id: "com.github.mxenabled.binks" version "3.0.1"
+}
+
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
+```
+
+_settings.gradle_:
+```groovy
+pluginManagement {
+  repositories {
+    ...
+    maven { url "https://jitpack.io" }
+  }
+}
+```
+<!-- x-release-please-end -->
+
 ### Usage
 
 ```
