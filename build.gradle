@@ -1,19 +1,32 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
-  id "com.github.mxenabled.coppuccino" version "5.+"
-  id "com.github.mxenabled.vogue" version "2.+"
+  id "com.github.mxenabled.coppuccino" version "6.+"
+  id "com.github.mxenabled.vogue" version "3.+"
   id "groovy"
-  id "java"
-  id "maven-publish"
   id "java-gradle-plugin"
+  id "maven-publish"
   id "org.jetbrains.kotlin.jvm" version "2.1.0"
 }
 
 group "com.mx.binks"
 version "3.0.2" // x-release-please-version
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(17)
+  }
+}
+
+kotlin {
+  compilerOptions {
+    jvmTarget = JvmTarget.JVM_17
+  }
+}
+
+coppuccino {
+  kotlin { enabled = true }
+}
 
 repositories {
   mavenCentral()
@@ -23,13 +36,13 @@ repositories {
 }
 
 dependencies {
-  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
   implementation "com.lordcodes.turtle:turtle:0.7.0" // Provides git and commandline interaction API
 
-  // Unit tests
   testImplementation "org.mockito:mockito-inline:[5.0,6.0)"
   testImplementation "org.spockframework:spock-core:2.4-M6-groovy-3.0"
 }
+
+test { useJUnitPlatform() }
 
 gradlePlugin {
   plugins {
@@ -43,20 +56,6 @@ gradlePlugin {
     }
   }
 }
-
-kotlin {
-  compilerOptions {
-    jvmTarget = JvmTarget.JVM_17
-  }
-}
-
-coppuccino {
-  kotlin {
-    enabled = true
-  }
-}
-
-test { useJUnitPlatform() }
 
 wrapper {
   gradleVersion = "7.6.4"
