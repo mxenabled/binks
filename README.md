@@ -14,7 +14,7 @@ Binks is hosted via [JitPack](https://jitpack.io/p/mxenabled/binks).
 _build.gradle_:
 ```groovy
 plugins {
-  id: "com.github.mxenabled.binks" version "3.0.3"
+  id: "com.github.mxenabled.binks" version "4.0.0"
 }
 
 allprojects {
