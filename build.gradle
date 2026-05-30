@@ -10,7 +10,7 @@ plugins {
 }
 
 group "com.mx.binks"
-version "3.0.3" // x-release-please-version
+version "4.0.0" // x-release-please-version
 
 java {
   toolchain {

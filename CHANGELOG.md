@@ -1,5 +1,16 @@
 # Changelog
 
+## [4.0.0](https://github.com/mxenabled/binks/compare/3.0.3...4.0.0) (2026-05-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump to gradle 8 and java 21
+
+### Features
+
+* bump to gradle 8 and java 21 ([84cdaff](https://github.com/mxenabled/binks/commit/84cdaff7cc5645254db2d33436f230a7f629ed90))
+
 ## [3.0.3](https://github.com/mxenabled/binks/compare/3.0.2...3.0.3) (2026-02-27)
 
 
