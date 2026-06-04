@@ -1,20 +1,18 @@
 package com.mx.binks
 
-import org.gradle.internal.impldep.org.junit.Rule
-import org.gradle.internal.impldep.org.junit.rules.TemporaryFolder
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.testkit.runner.TaskOutcome
 
 import spock.lang.Specification
+import spock.lang.TempDir
 
 class BinksPluginTest extends Specification {
-  @Rule
-  TemporaryFolder testProjectFolder = new TemporaryFolder()
+  @TempDir
+  File testProjectFolder
   File buildFile
 
   def setup() {
-    testProjectFolder.create()
-    buildFile = testProjectFolder.newFile("build.gradle")
+    buildFile = new File(testProjectFolder, "build.gradle")
     buildFile << """
       plugins {
         id 'com.mx.binks'
@@ -26,7 +24,7 @@ class BinksPluginTest extends Specification {
   def "releases"() {
     when:
     def result = GradleRunner.create()
-        .withProjectDir(testProjectFolder.root)
+        .withProjectDir(testProjectFolder)
         .withArguments("release", "--check-only", "--ignore-dirty-tree", "--force")
         .withPluginClasspath()
         .build()
