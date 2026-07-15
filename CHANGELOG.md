@@ -1,5 +1,16 @@
 # Changelog
 
+## [5.0.0](https://github.com/mxenabled/binks/compare/4.0.0...5.0.0) (2026-07-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* bump to Gradle 9.5.1
+
+### Features
+
+* bump to Gradle 9.5.1 ([2913bda](https://github.com/mxenabled/binks/commit/2913bda8c791637c7cdcd38dc1c22063a5ec8d2a))
+
 ## [4.0.0](https://github.com/mxenabled/binks/compare/3.0.3...4.0.0) (2026-05-30)
 
 
